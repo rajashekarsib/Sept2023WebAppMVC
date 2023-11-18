@@ -1,0 +1,89 @@
+﻿@model Sept2023WebAppMVC.Models.UserModel
+
+
+@{
+    ViewBag.Title = "Validations";
+}
+
+<h2>Validations</h2>
+
+
+@using (Html.BeginForm("Validations", "ValidationExample",FormMethod.Post))
+{
+
+<div>
+    @Html.ValidationSummary(false,"",new  { @class="text-danger"})
+    <div> 
+        @Html.LabelFor(m => m.FirstName)
+        @Html.EditorFor(m => m.FirstName)
+        @Html.ValidationMessageFor(m=>m.FirstName, "", new { @class="text-danger"})
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Lastname)
+        @Html.EditorFor(m => m.Lastname)
+        @Html.ValidationMessageFor(m=>m.Lastname,string.Empty,new { @class = "text-danger" })
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.DateOfBirth)
+        @Html.EditorFor(m => m.DateOfBirth)
+        @Html.ValidationMessageFor(m=>m.DateOfBirth,string.Empty, new {@class="text-danger"})
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Age)
+        @Html.EditorFor(m => m.Age)
+        @Html.ValidationMessageFor(m => m.Age, string.Empty, new { @class = "text-danger" })
+
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Address)
+        @Html.EditorFor(m => m.Address)
+        @Html.ValidationMessageFor(m => m.Address, string.Empty, new { @class = "text-danger" })
+
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.MobileNumer)
+        @Html.EditorFor(m => m.MobileNumer)
+        @Html.ValidationMessageFor(m => m.MobileNumer, string.Empty, new { @class = "text-danger" })
+
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Email)
+        @Html.EditorFor(m => m.Email)
+        @Html.ValidationMessageFor(m => m.Email, string.Empty, new { @class = "text-danger" })
+
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Username)
+        @Html.EditorFor(m => m.Username)
+        @Html.ValidationMessageFor(m => m.Username, string.Empty, new { @class = "text-danger" })
+
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Password)
+        @Html.EditorFor(m => m.Password)
+        @Html.ValidationMessageFor(m => m.Password, string.Empty, new { @class = "text-danger" })
+
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.ConformPassword)
+        @Html.EditorFor(m => m.ConformPassword)
+        @Html.ValidationMessageFor(m=>m.ConformPassword, string.Empty,new {@class= "text-danger"})
+    </div>
+
+    <div>
+       <input type="submit"  value="Submit"/>
+    </div>
+
+
+</div>
+
+}

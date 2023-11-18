@@ -1,0 +1,52 @@
+﻿@model Sept2023WebAppMVC.Enitites.UserDetail
+
+
+@{
+    ViewBag.Title = "AddUserDetails";
+    Layout = "~/Views/Shared/_UserLayOut.cshtml";
+}
+
+<h2>AddUserDetails</h2>
+
+
+@using (@Html.BeginForm((Model.Id>0? "EditUserDetails": "AddUserDetails"), "UserDetails",FormMethod.Post))
+{
+
+
+    <div>
+        <div>
+            <div>A
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name)
+            </div>
+
+            <div>
+                @Html.LabelFor(m => m.DateOfBirth)
+                @Html.EditorFor(m => m.DateOfBirth)
+            </div>
+
+          
+
+            <div>
+                @Html.LabelFor(m => m.MobileNumber)
+                @Html.EditorFor(m => m.MobileNumber)
+            </div>
+
+            <div>
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email)
+            </div>
+
+           
+            <div>
+                @Html.LabelFor(m => m.IsActive)
+                @Html.CheckBoxFor(m => m.IsActive)
+            </div>
+
+            <div>
+                <input type="submit" value="Save" />
+            </div>
+        </div>
+    </div>
+
+}

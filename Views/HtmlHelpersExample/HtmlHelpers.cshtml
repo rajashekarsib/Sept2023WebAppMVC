@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "HtmlHelpers";
+}
+
+<h2>HtmlHelpers</h2>+++
+
+
+
+
+
+@using (@Html.BeginForm())
+{
+    <div>
+        <div>
+            <input type="text" /> <br />
+            <hr />
+            Username: @Html.TextBox("username") <br />
+            Password:@Html.Password("password") <br />
+            Gender: @Html.RadioButton("gender", "Male")Male
+            @Html.RadioButton("gender", "FeMale") Female <br />
+            @Html.CheckBox("agree") I Agree <br />
+            @Html.Label("name") <br />
+            @Html.Hidden("Id") <br />
+
+                        @Html.Display("Texexample", "<p>DisplayData </p>") <br />
+
+            @Html.TextArea("address")<br />
+
+        </div>
+        <br />
+        <div style="margin-left:150px">
+            <input type="submit" value="Save" />
+        </div> 
+        <br />
+        <br />
+        <div>
+            <p> @ViewBag.usernamePassword</p>
+        </div>
+
+    </div>
+}

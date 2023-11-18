@@ -1,0 +1,54 @@
+﻿@model Sept2023WebAppMVC.Models.PersonDetailsModel 
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    <div>
+        <div>
+            <div>
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name)
+            </div>
+
+            <div>
+                @Html.LabelFor(m => m.DateOfBirth)
+                @Html.EditorFor(m => m.DateOfBirth)
+            </div>
+
+            <div>
+                @Html.LabelFor(m => m.GenderId)             
+                 @Html.DropDownListFor(m => m.GenderId, (SelectList)ViewBag.GenderData);
+            </div>
+
+            <div>
+                @Html.LabelFor(m => m.MobileNumber)
+                @Html.EditorFor(m => m.MobileNumber)
+            </div>
+
+            <div>
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email)
+            </div>
+
+            <div>
+                @Html.LabelFor(m => m.Address)
+                @Html.TextAreaFor(m => m.Address)
+            </div>
+
+            <div>
+                @Html.LabelFor(m => m.IsActive)
+                @Html.CheckBoxFor(m => m.IsActive)
+            </div>
+
+            <div>
+                <input type="submit" value="Update" />
+            </div>
+        </div>
+    </div>
+}

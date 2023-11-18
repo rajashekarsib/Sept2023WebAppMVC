@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Razor Example</h2>
+
+
+
+<h3> 5 + 4</h3>
+
+<h3>@(5 + 4)</h3>
+
+
+@{
+
+    string companyName = "Skilliceberg";
+    <h4>companyName</h4>
+
+    <h4>@companyName</h4>
+
+    @(@companyName = @companyName + "   Sircilla   ");
+    <h4>@companyName</h4>
+
+}
+
+
+
+
+
+
+@helper  DisplayCties(string[] cities)
+{
+<ul>
+    @foreach (string city in cities)
+    {
+        <li>@city</li>
+    }
+
+    @*@for (int i = 0; i < cities.Length; i++)
+    {
+       <li> @cities[i]</li>
+}*@
+</ul>
+}
+
+
+@DisplayCties(new string[] {"hyd","Mumbai","Bengalure","Delhi" })
+
+
+
+
+
+
+

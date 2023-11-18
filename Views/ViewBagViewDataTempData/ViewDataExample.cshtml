@@ -1,0 +1,20 @@
+﻿@model Sept2023WebAppMVC.Models.CredentialModel
+
+
+@{
+    ViewBag.Title = "ViewDataExample";
+}
+
+<h2>ViewDataExample</h2>
+
+<hr />
+
+<h4> @ViewData["Name"]</h4>
+
+@{
+    var credential = @ViewData["KeyCredentials"] as CredentialModel;
+}
+
+
+<p>@credential.Username </p>
+<p>@credential.Password </p>

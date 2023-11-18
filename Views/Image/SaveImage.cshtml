@@ -1,0 +1,28 @@
+﻿@model Sept2023WebAppMVC.Models.ImageModel
+
+@{
+    ViewBag.Title = "SaveImage";
+    Layout = "~/Views/Shared/_UserLayOut.cshtml";
+}
+
+<h2>SaveImage</h2>
+
+
+
+@using (Html.BeginForm("UploadImage", "Image",FormMethod.Post,new { enctype= "multipart/form-data" }))
+{
+    <div>
+        @Html.LabelFor(m=>m.Username)
+        @Html.TextBoxFor(m => m.Username)
+    </div>
+
+    <div>
+        <input type="file" name="imageFile" required  />
+    </div>
+    <div>
+
+    </div>
+    <div>
+        <input type="submit" value="Upload"/>
+    </div>
+            }

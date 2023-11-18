@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Sept2023WebAppMVC.Models.PersonDetailsModel>
+
+
+@{
+    ViewBag.Title = "GetPersonDetails";
+}
+
+<style type="text/css">
+    /*table  tr td{
+        border:1px solid black;
+        border-collapse:collapse;
+    }*/
+
+</style>
+
+<h2>GetPersonDetails</h2>
+
+<hr />
+
+<font color="blue" face="arial" ><a href="@Url.Action("Save")"> Create New</a></font>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name </th>
+            <th>DateOfBirth </th>
+            <th>GenderId </th>
+            <th>MobileNumber </th>
+            <th>Email </th>
+            <th>IsActive </th>
+            <th>Address </th>
+            <th>Action </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.DateOfBirth</td>
+                <td>@item.GenderId</td>
+                <td>@item.MobileNumber</td>
+                <td>@item.Email</td>
+                <td>@item.IsActive</td>
+                <td>@item.Address</td>
+                <td>
+                    @*@Html.ActionLink("add", "Save")*@    @*<a href="/PersonDetails/Save">add</a>*@
+
+                    @*@Html.ActionLink("edit", "Edit")    one view to another action method*@
+                    @Html.ActionLink("edit", "Edit", new { id = @item.Id })  @*one view to another action method with id*@
+                    @Html.ActionLink("delete", "DeletePersonDetails", new { id = item.Id })
+
+                    <a href="@Url.Action("Edit",  new { id = item.Id })"> new edit</a> 
+
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>

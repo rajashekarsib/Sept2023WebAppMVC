@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+
+<a href="About"> RedirectionExample about</a>  @*same controller action method*@
+<br />
+<a href="@Url.Action("About","Home")"> home about</a>
+<a href="/Home/About"> home about</a>
+<br />
+<br />
+<br />
+
+
+@Html.ActionLink("Go To Person Details Page", "GetPersonDetails", "PersonDetails") <br />
+
+@Html.ActionLink("Go To Person Details Page With Id", "GetPersonDetails", "PersonDetails", new { id = 1 })
+

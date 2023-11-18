@@ -1,0 +1,19 @@
+﻿@model Sept2023WebAppMVC.Models.ImageModel
+
+
+@{
+    ViewBag.Title = "DisplayImage";
+    Layout = "~/Views/Shared/_UserLayOut.cshtml";
+}
+
+<h2>DisplayImage</h2>
+
+<div>
+
+    <h2>@Model.Username</h2>
+    
+    <div>
+        <img src="@Url.Action("ShowImage","Image",new {id = Model.Id})" alt="Image Not Found" height="400" width="600" />
+    </div>
+
+</div>

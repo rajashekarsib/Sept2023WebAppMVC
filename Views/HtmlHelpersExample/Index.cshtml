@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Html Helpers</h2>
+
+
+@using (@Html.BeginForm())
+{
+<div>
+    <div>
+
+        Username: @Html.TextBox("username") <br />
+        Password:@Html.Password("password")
+    </div>
+    <br />
+    <div style="margin-left:150px">
+        <input type="submit" value="Save" />
+    </div>
+    <br />
+    <br />
+    <div>
+        <p> @ViewBag.usernamePassword</p>
+    </div>
+
+</div>
+}
+
+
+<h3> Strongly type html helpers</h3>
+

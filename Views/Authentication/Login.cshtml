@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_UserLayOut.cshtml";
+}
+
+<h2> Skilliceberg</h2>
+
+@using (Html.BeginForm())
+{
+
+    <div>
+        @Html.Label("Username")
+        @Html.TextBox("username")
+    </div>
+    <div>
+        @Html.Label("Password")
+        @Html.Password("password")
+    </div>
+    <div>
+        <input type="submit" value="Login" />
+    </div>
+}

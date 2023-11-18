@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Sept2023WebAppMVC.Enitites.UserDetail>
+
+
+@{
+    ViewBag.Title = "UserDeatilsList";
+    Layout = "~/Views/Shared/_UserLayOut.cshtml";
+}
+
+<h2>UserDeatilsList</h2>
+
+
+
+<hr />
+
+
+<div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>DateOfBirth</th>
+                <th>MobileNumber</th>
+                <th>Email</th>
+                <th>IsActive</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.DateOfBirth</td>
+                    <td>@item.MobileNumber</td>
+                    <td>@item.Email</td>
+                    <td>@item.IsActive</td>
+                    <td>
+                        @Html.ActionLink("edit", "EditUserDetails", new { id = @item.Id })
+                        @Html.ActionLink("delete", "DeleteUserDetails", new { id = @item.Id }, new { onclick = "return confirm('Are you sure you wish to delete this record?');" })
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
